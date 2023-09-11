@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 :root {
   --blue: hsl(246, 80%, 60%);
   --lightRed: hsl(15, 100%, 70%);
@@ -16,6 +18,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Rubik', sans-serif;
 }
 body {
   height: 100vh;
@@ -35,24 +38,40 @@ body {
 }
 .profile {
   background-color: var(--darkBlue);
-  border-radius: 15px 15px 0 0;
+  border-radius: 10px;
+  width: 170px;
 }
 .profile-main {
-  background-color: var(--violet);
-  border-radius: 15px;
-  padding: 1.2rem;
+  background-color: var(--blue);
+  border-radius: 10px;
+  padding: 1.2rem 1.2rem 3rem 1.2rem;
 }
 .profile-main img {
   border: 2px solid var(--paleBlue);
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  margin-bottom: 1.5rem;
 }
 .profile-main > p {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--paleBlue);
 }
 .profile-main .name {
-  font-size: 18px;
+  font-size: 20px;
+  color: white;
+}
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 12px;
+}
+.profile-links a {
+  text-decoration: none;
+  color: var(--desaturatedBlue);
+}
+.profile-links a:hover {
   color: white;
 }
