@@ -1,7 +1,12 @@
 import React from 'react'
+import Item from '../Item'
 
-export default function Monthly() {
+export default function Monthly({data}) {
   return (
-    <div>Monthly</div>
+    <>
+     {data.map((item, i) => (
+        <Item title={item.title} timeframe={item.timeframes.monthly} previous="Last month" />
+     ))}
+    </>
   )
 }

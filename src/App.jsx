@@ -17,16 +17,15 @@ function App() {
       .then((jsonData) => setData(jsonData))
       .catch((error) => console.error('Error fetching data:', error));
 
-      console.log(data)
   }, []);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Dashboard />}>
-          <Route path="/daily" element={<Daily />} />
-          <Route path="/weekly" element={<Weekly />} />
-          <Route path="/monthly" element={<Monthly />} />
+          <Route path="/daily" element={<Daily data={data} />} />
+          <Route path="/weekly" element={<Weekly data={data} />} />
+          <Route path="/monthly" element={<Monthly data={data} />} />
         </Route>
       </Routes>
     </Router>

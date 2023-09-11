@@ -1,7 +1,12 @@
 import React from 'react'
+import Item from '../Item'
 
-export default function Daily() {
+export default function Daily({data}) {
   return (
-    <div>Daily</div>
+    <>
+     {data.map((item, i) => (
+        <Item title={item.title} timeframe={item.timeframes.daily} previous="Yesterday" />
+     ))}
+    </>
   )
 }
