@@ -10,7 +10,6 @@ import WorkIcon from "../assets/images/icon-work.svg"
 
 export default function Item({title, timeframe, previous}) {
   const iconMap = {
-    Ellipsis: EllipsisIcon,
     Exercise: ExerciseIcon,
     Play: PlayIcon,
     Selfcare: SelfcareIcon,
@@ -21,16 +20,32 @@ export default function Item({title, timeframe, previous}) {
 
   const iconSrc = iconMap[title] || '';
 
+  const iconStyle = {
+    Work: "hsl(15, 100%, 70%)",
+    Play: "hsl(195, 74%, 62%)",
+    Study: "hsl(348, 100%, 68%)",
+    Exercise: "hsl(145, 58%, 55%)",
+    Social: "hsl(264, 64%, 52%)",
+    Selfcare: "hsl(43, 84%, 65%)"
+  }
+
+  const iconColor = iconStyle[title] || ''
+
+  const style = {
+    backgroundColor: iconColor
+  }
   return (
     <div className='item'>
-      <img src={iconSrc} alt={`${title} icon`}  />
-      <div>
-        <p>{title}</p>
-        <img src="" alt="" />
+      <div className='image-bg' style={style}>
+        <img src={iconSrc} alt={`${title} icon`}  />
       </div>
-      <div>
-        <p>{timeframe.current}</p>
-        <p>{previous} - {timeframe.previous}</p>
+      <div className='item-title'>
+        <p>{title}</p>
+        <img src={EllipsisIcon} alt="ellipsis icon" />
+      </div>
+      <div className='item-timeframe'>
+        <p className='current'>{timeframe.current}hrs</p>
+        <p className='previous'>{previous} - {timeframe.previous}hrs</p>
       </div>
     </div>
   )
